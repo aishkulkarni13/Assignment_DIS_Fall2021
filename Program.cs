@@ -8,12 +8,14 @@ namespace Assignment_1
         //Question 1
         static public Boolean HalvesAreAlike(string s)
         {
+            //dividing string into half by subsstring method and one half start to half length and another next half
             string s1 = s.Substring(0, s.Length / 2);
             string s2 = s.Substring(s.Length / 2);
             int vowelsCOunt1 = 0;
             int vowelsCount2 = 0;
             for (int i = 0; i < s1.Length; i++)
             {
+                //check for vowels and if yes increase counter and then compare and return true/false 
                 if (s1[i] == 'a' || s1[i] == 'e' || s1[i] == 'i' || s1[i] == 'o' || s1[i] == 'u')
                 {
                     vowelsCOunt1++;
@@ -40,8 +42,10 @@ namespace Assignment_1
         static public Boolean CheckIfPangram(string s)
         {
             {
+                //declare aplphabets which can act as database to all the 26 characters and then compare with it and update count
                 string alphabets = "abcdefghijklmnopqrstuvwxyz";
                 int counter = 0;
+
                 foreach (char c in alphabets)
                 {
                     foreach (char d in s.ToLower())
@@ -90,6 +94,7 @@ namespace Assignment_1
             {
                 foreach (char c in stones)
                 {
+                    //contains will help us find if that is present or not and then updated counter returned it.
                     if (jewels.Contains(c))
                     {
                         counter++;
@@ -113,6 +118,7 @@ namespace Assignment_1
             try
             {
                 {
+                    //created new list which has all the characters of word2 and then updated list bt copying the specific index  
                     var alpha_list = new List<char>();
                     foreach (char c in word2)
                     {
@@ -125,7 +131,7 @@ namespace Assignment_1
                         alpha_list[indices[count]] = c;
                         count++;
                     }
-
+                    //joined into string
                     string finalstring = string.Join("", alpha_list);
                     return finalstring;
                 }
@@ -141,6 +147,7 @@ namespace Assignment_1
         //Question 6
         static public int[] CreateTargetArray(int[] nums, int[] index)
         {
+            //created empty new list and used for loop and simultaneously inserted the pair of index and num and finally converted to array as it was expecting array
             var target_list = new List<int>(nums.Length);
             if (nums.Length == index.Length && nums.Length >= 1 && nums.Length <= 100 && index.Length >= 1 && index.Length <= 100)
             {
@@ -148,6 +155,7 @@ namespace Assignment_1
                 {
                     if (nums[i] >= 0 && nums[i] <= 100 && index[i] >= 0 && index[i] <= i)
                     {
+
                         target_list.Insert(index[i], nums[i]);
                     }
                 }
